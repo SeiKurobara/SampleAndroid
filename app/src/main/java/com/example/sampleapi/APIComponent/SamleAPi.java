@@ -23,7 +23,7 @@ public class SamleAPi {
         call.enqueue(new Callback<List<HashMap<String, Object>>>() {
             @Override
             public void onResponse(Call<List<HashMap<String, Object>>> call, Response<List<HashMap<String, Object>>> response) {
-                sampleCallback.onSuccess( response.body());
+                sampleCallback.onSuccess( response.body().subList(0,1));
                 Log.d(TAG, "onResponse: " +  response.body().toString());
             }
 
